@@ -29,7 +29,7 @@ class TurtleBot3Controller:
 
         #3. set the goal of the robot
 
-        self.x_goal = 2.0
+        self.x_goal = 8.0
         self.y_goal = 2.0
         self.yaw_goal = pi / 2
 
@@ -124,7 +124,7 @@ class TurtleBot3Controller:
             v = -v                                  # negative velocity
             alpha = self.wrap_angle(alpha - pi) 
 
-        w = self.k_alpha * alpha + self.k_beta * bet
+        w = self.k_alpha * alpha + self.k_beta * beta
 
         # return v, w
 

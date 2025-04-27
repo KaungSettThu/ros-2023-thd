@@ -1,0 +1,8 @@
+<launch>
+    <node 
+        name = "turtlebot3_controller"
+        pkg = "turtlebot3_control"
+        type = "control.py"
+        output = "screen"
+    />
+</launch>
