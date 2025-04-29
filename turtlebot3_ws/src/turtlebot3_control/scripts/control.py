@@ -117,14 +117,12 @@ class TurtleBot3Controller:
         # compute linear velocity and angular velocity
 
         v = self.k_rho * rho
+        w = self.k_alpha * alpha + self.k_beta * beta
 
         # reverse the direction if the goal is behind
 
-        if abs(alpha) > pi / 2:
+        if (-pi < alpha <= -pi / 2) or (pi / 2 < alpha <= pi):
             v = -v                                  # negative velocity
-            alpha = self.wrap_angle(alpha - pi) 
-
-        w = self.k_alpha * alpha + self.k_beta * beta
 
         # return v, w
 
